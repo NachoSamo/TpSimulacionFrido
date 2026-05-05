@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:8000/\" -Method GET | Select-Object -ExpandProperty Content)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:8000/\" -UseBasicParsing | Select-Object -ExpandProperty Content)"
+    ]
+  }
+}
