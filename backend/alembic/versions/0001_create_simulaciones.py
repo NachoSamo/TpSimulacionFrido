@@ -9,7 +9,7 @@ from typing import Sequence, Union
 
 import sqlalchemy as sa
 from alembic import op
-from sqlalchemy.dialects.postgresql import JSONB, TIMESTAMPTZ, UUID
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 
 revision: str = "0001"
 down_revision: Union[str, None] = None
@@ -27,12 +27,11 @@ def upgrade() -> None:
             primary_key=True,
             nullable=False,
         ),
-        sa.Column(
-            "creada_en",
-            TIMESTAMPTZ(),
-            server_default=sa.text("now()"),
-            nullable=False,
-        ),
+        sa.Column("creada_en",
+        sa.TIMESTAMP(timezone=True),
+        server_default=sa.text("now()"),
+        nullable=False,
+    ),
         sa.Column("n", sa.Integer(), nullable=False),
         sa.Column("seed", sa.BigInteger(), nullable=True),
         sa.Column("config", JSONB(), nullable=False),
