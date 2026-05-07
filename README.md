@@ -39,15 +39,23 @@ El sistema permite calcular y visualizar:
 
 ```text
 ├── backend/
-│   ├── main.py            # Endpoints de FastAPI
-│   ├── simulation_engine.py # Lógica de Montecarlo y distribuciones
-│   └── models.py          # Esquemas de datos (Pydantic)
+│   ├── alembic/           # Migraciones de base de datos
+│   ├── controllers/       # Endpoints de FastAPI (simulación, historial)
+│   ├── db/                # Configuración y conexión a base de datos
+│   ├── models/            # Modelos de base de datos (SQLModel) y configuraciones
+│   ├── services/          # Lógica de negocio y motor de simulación
+│   ├── tests/             # Tests unitarios y de integración
+│   └── main.py            # Aplicación principal de FastAPI
 ├── frontend/
 │   ├── src/
-│   │   ├── components/    # Tablas de resultados y formularios de carga
-│   │   ├── hooks/         # Lógica de llamadas a la API
-│   │   └── App.tsx
-└── README.md
+│   │   ├── components/    # Componentes de UI (formularios, tablas, etc.)
+│   │   ├── hooks/         # Hooks personalizados de React
+│   │   ├── pages/         # Vistas/Páginas principales de la aplicación
+│   │   ├── schemasZod/    # Esquemas de validación (Zod)
+│   │   ├── services/      # Lógica de llamadas a la API del backend
+│   │   └── App.tsx        # Componente raíz
+├── docker-compose.yml     # Orquestación de contenedores (Base de datos)
+└── README.md              # Documentación del proyecto
 ```
 
 ## ⚙️ Instalación y Ejecución

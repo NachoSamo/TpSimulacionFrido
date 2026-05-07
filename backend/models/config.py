@@ -43,7 +43,7 @@ class SimConfig:
     def detencion_desv_min(self) -> float:
         return self.detencion_desv_seg / 60.0
  
-    # ---------- Validación ----------
+    # ---------- Validación de la configuración de la simulacion que ingresa el usuario
     def validar(self) -> None:
         if self.n < 1:
             raise ValueError("n debe ser >= 1")

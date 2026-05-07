@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 engine = None
 
-
+#Validamos que la base de datos este disponible
 def init_engine() -> None:
     global engine
     try:

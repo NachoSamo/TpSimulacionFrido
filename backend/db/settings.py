@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
+# Cargamos variables de entorno del .env para la base de datos
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",

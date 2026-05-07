@@ -74,6 +74,7 @@ def ejecutar_simulacion(
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+    # Si la simulacion salio bien le mando todo a la base de datos
     try:
         id_sim = persistir(session, cfg, stats, resultado["n"])
     except Exception:
