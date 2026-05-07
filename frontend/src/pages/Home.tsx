@@ -1,11 +1,11 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent } from "../components/ui/Card";
 import { SimulationForm } from "../components/simulation/SimulationForm";
 import { useNotification } from "../hooks/useNotification";
 import { useSimulation } from "../hooks/useSimulation";
 import type { SimulationSchema } from "../schemasZod/simulation";
-import { Activity, Settings, BarChart3 } from "lucide-react";
+import { Settings, BarChart3 } from "lucide-react";
 
 
 const TEAM_MEMBERS = [
@@ -42,10 +42,9 @@ export const Home = () => {
       {/* Navbar */}
       <header className="flex items-center justify-between px-8 py-4 bg-[#fcf8ff] border-b border-[#e8e8e8]">
         <div className="text-2xl font-bold text-[#5651b6]">Frido</div>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#666666]">
-        </nav>
         <div className="flex items-center gap-4">
-          <a href="http://localhost:8000/docs" className="text-sm font-medium text-[#666666] hover:text-[#181925] hidden md:block">Documentation</a>
+          <Link to="/historial" className="text-sm font-medium text-[#666666] hover:text-[#181925] hidden md:block">Historial</Link>
+          <Link to="http://localhost:8000/docs" className="text-sm font-medium text-[#666666] hover:text-[#181925] hidden md:block">Documentation</Link>
         </div>
       </header>
 

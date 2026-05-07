@@ -18,3 +18,14 @@ export const simulationService = {
     return response.data;
   },
 };
+
+export const historialService = {
+  getHistorial: async () => {
+    const response = await api.get("/simulaciones");
+    return response.data;
+  },
+  getDetalle: async (id: string) => {
+    const response = await api.get(`/simulaciones/${id}`);
+    return response.data;
+  },
+};
